@@ -1,10 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { ParsedUrlQuery } from "querystring";
 import {supabase} from "../utils/supabase"
-
-interface IParams extends ParsedUrlQuery {
-    slug: string
-}
 
 const LessonDetails:NextPage = ({lesson}:{lesson:any}) =>{
     // console.log({lesson});
