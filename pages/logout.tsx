@@ -4,13 +4,14 @@ import { useEffect } from "react"
 import { supabase } from "../utils/supabase"
 
 const Logout:NextPage = () =>{
-    const router = useRouter();
+    const router = useRouter()
     useEffect(()=>{
         const logout = async ()=>{
-            await supabase.auth.user() 
+            await supabase.auth.signOut() 
             router.push('/');
+
         }
-        logout();
+        logout()
 
     },[])
     return <p> Logging out </p>
