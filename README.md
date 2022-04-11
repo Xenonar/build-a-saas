@@ -1,2 +1,2 @@
-# Build-a-Saas
- Using Next.js Supabase and Stripe
+# build-a-saas
+ using Next.js, supabase, and strip
