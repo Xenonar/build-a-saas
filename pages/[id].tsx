@@ -1,8 +1,19 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import {supabase} from "../utils/supabase"
 
 const LessonDetails:NextPage = ({lesson}:{lesson:any}) =>{
+    const router = useRouter();
     // console.log({lesson});
+    // console.log(supabase.auth.user());
+    useEffect(()=>{
+        const user:any = supabase.auth.user()
+        if(user == null){
+            router.push('/')
+        }
+
+    },[])
     return <div className="w-full max-w-3xl mx-auto py-16 px-8">
         <h1 className="text-3xl mb-6">{lesson.title}</h1>
         <p className="text-xl">{lesson.description}</p></div>

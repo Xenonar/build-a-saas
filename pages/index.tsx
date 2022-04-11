@@ -5,6 +5,9 @@ import Link from 'next/link';
 
 const Home: NextPage = ({lessons}:{lessons:any}) => {
   console.log({lessons});
+  // check user successfully login
+  console.log(supabase.auth.user());
+  
   
   return (
     <div className="w-full max-w-3xl mx-auto my-16 px-2">
